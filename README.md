@@ -20,3 +20,13 @@ Hybrid Custom Framework to test REST APIs
 ### To install the freeze version
 ``pip install -r requirements.txt``
 
+### To run test cases parellel
+## install the below dependency 
+````pip install pytest-xdist
+
+
+````pytest -n auto filepath leads to .py file
+``pytest -n auto .\tests\parallel\test_parallel_testCases.py``
+
+## To work with Excel file
+````pip install openpyxl
