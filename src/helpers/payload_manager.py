@@ -26,12 +26,13 @@ def payload_create_booking_dynamic():
         "totalprice": faker.random_int(min=100, max=1000),
         "depositpaid": faker.boolean(),
         "bookingdates": {
-            "checkin": "2018-01-01", # str(faker.date_between(start_date='-3y', end_date='today')),
-            "checkout": "2019-01-01" # str(faker.date_between(start_date='today', end_date='+3y'))
+            "checkin": "2018-01-01",  # str(faker.date_between(start_date='-3y', end_date='today')),
+            "checkout": "2019-01-01"  # str(faker.date_between(start_date='today', end_date='+3y'))
         },
-        "additionalneeds": faker.random_element(elements=("Breakfast", "Parking", "WiFi", "Dinner" ,"Extra Bed"))
+        "additionalneeds": faker.random_element(elements=("Breakfast", "Parking", "WiFi", "Dinner", "Extra Bed"))
     }
     return payload
+
 
 def payload_create_token():
     payload = {

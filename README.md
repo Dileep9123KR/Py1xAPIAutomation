@@ -15,18 +15,20 @@ Hybrid Custom Framework to test REST APIs
 ````pip install requests pytest pytest-html faker allure-pytest jsonschema
 
 ### To freeze your package version
-``pip freeze > requirements.txt``
+````pip freeze > requirements.txt
 
 ### To install the freeze version
-``pip install -r requirements.txt``
+````pip install -r requirements.txt
 
 ### To run test cases parellel
-## install the below dependency 
 ````pip install pytest-xdist
-
-
+samples
 ````pytest -n auto filepath leads to .py file
-``pytest -n auto .\tests\parallel\test_parallel_testCases.py``
+````pytest -n auto .\tests\parallel\test_parallel_testCases.py
 
-## To work with Excel file
+### To work with Excel file
 ````pip install openpyxl
+
+### To work with Json Schema
+``pip install jsonschema``
+

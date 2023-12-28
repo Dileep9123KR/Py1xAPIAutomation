@@ -1,4 +1,5 @@
 import pytest
+from requests import auth
 
 from src.helpers.api_requests_wrapper import post_requests, put_requests, delete_requests
 from src.constants.api_constants import BASE_URL, APIConstants, base_url
@@ -25,7 +26,7 @@ class TestCreateBooking(object):
 
     @pytest.fixture()
     def create_booking(self):
-        response = post_requests(url=APIConstants.base_url(), auth=None, headers=common_headers_json(),
+        response = post_requests(url=APIConstants.url_create_booking(), auth=None, headers=common_headers_json(),
                                  payload=payload_create_booking(), in_json=False)
         print(response)
         bookingid = response.json()["bookingid"]
@@ -56,5 +57,5 @@ class TestCreateBooking(object):
         bookingid = create_booking
         delete_url = APIConstants.url_create_booking() + "/" + str(bookingid)
         response = delete_requests(url=delete_url, auth=auth, headers=common_headers_for_put_delete_patch(),
-                                   payload=None, in_json=False)
+                                   payload={}, in_json=False)
         print(response.json())
