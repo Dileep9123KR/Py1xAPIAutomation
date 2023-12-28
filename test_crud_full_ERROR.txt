@@ -1,0 +1,24 @@
+test_crud_full.py::TestCreateBooking::test_update_booking 
+
+========================= 1 warning, 1 error in 2.21s =========================
+ERROR          [100%]200
+200
+
+test setup failed
+self = <tests.integration_test.test_crud_full.TestCreateBooking object at 0x000001A3AEE6D7E0>
+
+    @pytest.fixture()
+    def create_token(self):
+        response = post_requests(
+            url=APIConstants.url_create_token(),
+            headers=common_headers_json(),
+            auth=None,
+            payload=payload_create_token(), in_json=False
+        )
+        verify_http_status_code(response, 200)
+>       token = response.json()["token"]
+E       KeyError: 'token'
+
+test_crud_full.py:21: KeyError
+
+Process finished with exit code 1
